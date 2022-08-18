@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Products",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Name",
+      "required": true
+    },
+    "SKU": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "Stock": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Categories": {
+      "type": "enumeration",
+      "enum": [
+        "Accessories",
+        "Bicycles"
+      ]
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Price": {
+      "type": "float"
+    }
+  }
+}
